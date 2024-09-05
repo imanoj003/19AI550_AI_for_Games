@@ -1,8 +1,8 @@
 # Ex.No: 5  Implementation of Jumping behavior 
-### DATE:                                                                            
-### REGISTER NUMBER : 
+### DATE:  01/09/2024                                                                        
+### REGISTER NUMBER : 212221240027
 ### AIM: 
-To write a python program to simulate Jumbing behavior. 
+To write a python program to simulate Jumping behavior. 
 ### Algorithm:
 1. Start the program
 2. Import the necessary modules
@@ -16,20 +16,61 @@ To write a python program to simulate Jumbing behavior.
 10. land the player and display the player at every timestep
 11.  Stop the program
  ### Program:
+```
+import pygame
+pygame.init()
 
 
+width, height = 800, 600
+screen = pygame.display.set_mode((width, height))
+pygame.display.set_caption("Simple Jumping with Image")
 
 
+black = (255, 255, 255)
 
 
+sprite_image_filename = "C:/Users/Abdul/Downloads/mario.jpg"
+sprite = pygame.image.load(sprite_image_filename)
+sprite_width, sprite_height = sprite.get_size()
 
 
+player_x = 100
+player_y = height - sprite_height
+player_velocity = 5
+jump_power = -15
+gravity = 1
+is_jumping = False
+vertical_speed = 0
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:
+        player_x -= player_velocity
+    if keys[pygame.K_RIGHT]:
+        player_x += player_velocity
+    if not is_jumping:
+        if keys[pygame.K_SPACE]:
+            is_jumping = True
+            vertical_speed = jump_power
+    if is_jumping:
+        player_y += vertical_speed
+        vertical_speed += gravity
+        if player_y >= height - sprite_height:
+            player_y = height - sprite_height
+            is_jumping = False
+    screen.fill(black)
+    screen.blit(sprite, (player_x, player_y))
+    pygame.display.flip()
+    pygame.time.delay(30)
 
-
-
+pygame.quit()
+```
 ### Output:
 
-
+![out](https://github.com/user-attachments/assets/78ce6e52-f685-4aa5-be85-81eceabd0996)
 
 ### Result:
 Thus the simple jumping behavior  was implemented.
