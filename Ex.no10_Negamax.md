@@ -1,6 +1,6 @@
 # Ex.No: 10 Implementation of Negamax algorithm 
 
-DATE:
+## DATE:
 ## NAME : Manoj M
 ## REGISTER NUMBER : 212221240027
 
