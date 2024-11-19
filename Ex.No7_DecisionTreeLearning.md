@@ -1,10 +1,10 @@
 # Ex.No: 7 Implementation of Decision Tree Learning
 
-DATE: 
+ ## DATE: 
 
-### NAME : Manoj M
+## NAME : Manoj M
 
-# REGISTER NUMBER : 212221240027
+## REGISTER NUMBER : 212221240027
 
 ### Aim:
 
